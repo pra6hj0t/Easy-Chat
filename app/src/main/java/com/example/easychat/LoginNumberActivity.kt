@@ -16,7 +16,7 @@ import com.hbb20.CountryCodePicker
 class LoginNumberActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+      //  enableEdgeToEdge()
         setContentView(R.layout.activity_login_number)
 
 
@@ -38,6 +38,7 @@ class LoginNumberActivity : AppCompatActivity() {
             val intent = Intent(this,LoginOtpScreen::class.java)
             intent.putExtra("number",counterCodePicker.fullNumber)
             startActivity(intent)
+            finish()
         }
 
     }
