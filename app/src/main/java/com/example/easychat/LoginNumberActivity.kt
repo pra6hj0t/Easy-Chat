@@ -1,5 +1,6 @@
 package com.example.easychat
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.hbb20.CountryCodePicker
 
 class LoginNumberActivity : AppCompatActivity() {
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
       //  enableEdgeToEdge()
@@ -36,7 +38,9 @@ class LoginNumberActivity : AppCompatActivity() {
             }
 
             val intent = Intent(this,LoginOtpScreen::class.java)
-            intent.putExtra("number",counterCodePicker.fullNumber)
+            intent.putExtra("number",counterCodePicker.fullNumberWithPlus.toString())
+           // val number = counterCodePicker.fullNumberWithPlus.toString()
+           // Toast.makeText(this@LoginNumberActivity,"number is $number",Toast.LENGTH_SHORT).show()
             startActivity(intent)
             finish()
         }
